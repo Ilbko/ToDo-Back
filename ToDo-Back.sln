@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.WebAPI", "ToDo.WebAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.BLL", "ToDo.BLL\ToDo.BLL.csproj", "{0DF67F33-ED27-4CF4-80BA-CEB34B766273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.DAL", "DAL\ToDo.DAL.csproj", "{57B35949-BBF0-41F5-B5CA-195AB4E531A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.DAL", "ToDo.DAL\ToDo.DAL.csproj", "{57B35949-BBF0-41F5-B5CA-195AB4E531A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
