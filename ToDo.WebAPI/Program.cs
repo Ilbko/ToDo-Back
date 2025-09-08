@@ -1,14 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using ToDo.DAL.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ToDoDbContext>(options =>
+{
+    options.UseSqlServer(connectionString, opt =>
+    {
+        opt.MigrationsAssembly(typeof(ToDoDbContext).Assembly.GetName().Name);
+        opt.MigrationsHistoryTable("__EFMigrationsHistory", schema: "entity_framework");
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
