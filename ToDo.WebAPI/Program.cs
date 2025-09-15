@@ -1,9 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using ToDo.BLL;
-using ToDo.BLL.Commands.ToDoTasks.Create;
-using ToDo.BLL.Commands.ToDoTasks.Update;
-using ToDo.BLL.Validators.ToDoTasks;
 using ToDo.DAL.Data;
 using ToDo.DAL.Repositories.Interfaces.Base;
 using ToDo.DAL.Repositories.Realizations.Base;
