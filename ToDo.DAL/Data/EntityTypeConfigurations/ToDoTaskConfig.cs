@@ -25,10 +25,5 @@ internal class ToDoTaskConfig : IEntityTypeConfiguration<ToDoTask>
 
         entity.Property(e => e.Status)
             .IsRequired();
-
-        entity.HasOne(e => e.User)
-            .WithOne()
-            .HasForeignKey<ToDoTask>(e => e.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

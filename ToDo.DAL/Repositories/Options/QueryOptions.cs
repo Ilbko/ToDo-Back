@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace ToDo.DAL.Repositories.Options;
 
-internal class QueryOptions<T>
+public class QueryOptions<T>
 {
     public Expression<Func<T, bool>>? Filter { get; set; }
     public Func<IQueryable<T>, IIncludableQueryable<T, object>>? Include { get; set; }

@@ -2,7 +2,8 @@
 using ToDo.DAL.Repositories.Interfaces.ToDoTasks;
 
 namespace ToDo.DAL.Repositories.Interfaces.Base;
-internal interface IRepositoryWrapper
+
+public interface IRepositoryWrapper
 {
     IToDoTasksRepository ToDoTasksRepository { get; }
 

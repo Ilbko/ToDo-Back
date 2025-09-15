@@ -6,7 +6,7 @@ using ToDo.DAL.Repositories.Realizations.ToDoTasks;
 
 namespace ToDo.DAL.Repositories.Realizations.Base;
 
-internal class RepositoryWrapper : IRepositoryWrapper
+public class RepositoryWrapper : IRepositoryWrapper
 {
     private readonly ToDoDbContext _dbContext;
 
