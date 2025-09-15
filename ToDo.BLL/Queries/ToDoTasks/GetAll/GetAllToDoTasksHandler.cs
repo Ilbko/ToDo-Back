@@ -6,7 +6,7 @@ using ToDo.DAL.Repositories.Interfaces.Base;
 
 namespace ToDo.BLL.Queries.ToDoTasks.GetAll;
 
-internal class GetAllToDoTasksHandler : IRequestHandler<GetAllToDoTasksQuery, Result<List<ToDoTaskDto>>>
+public class GetAllToDoTasksHandler : IRequestHandler<GetAllToDoTasksQuery, Result<List<ToDoTaskDto>>>
 {
     private readonly IMapper _mapper;
     private readonly IRepositoryWrapper _repositoryWrapper;

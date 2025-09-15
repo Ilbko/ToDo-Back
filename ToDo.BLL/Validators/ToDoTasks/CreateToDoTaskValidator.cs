@@ -5,16 +5,8 @@ namespace ToDo.BLL.Validators.ToDoTasks;
 
 public class CreateToDoTaskValidator : AbstractValidator<CreateToDoTaskCommand>
 {
-    public CreateToDoTaskValidator()
+    public CreateToDoTaskValidator(BaseToDoTaskValidator baseToDoTaskValidator)
     {
-        RuleFor(x => x.createToDoTaskDto.Title)
-            .NotEmpty()
-            .MaximumLength(50);
-
-        RuleFor(x => x.createToDoTaskDto.Description)
-            .MaximumLength(250);
-
-        RuleFor(x => x.createToDoTaskDto.Deadline)
-            .NotEmpty();
+        RuleFor(x => x.createToDoTaskDto).SetValidator(baseToDoTaskValidator);
     }
 }

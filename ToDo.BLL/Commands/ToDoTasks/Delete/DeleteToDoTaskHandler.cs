@@ -1,5 +1,6 @@
 ﻿using FluentResults;
 using MediatR;
+using ToDo.BLL.Constants;
 using ToDo.DAL.Entities;
 using ToDo.DAL.Repositories.Interfaces.Base;
 using ToDo.DAL.Repositories.Options;
@@ -25,7 +26,7 @@ public class DeleteToDoTaskHandler : IRequestHandler<DeleteToDoTaskCommand, Resu
 
         if (entityToDelete is null)
         {
-            return Result.Fail<long>("Task not found.");
+            return Result.Fail<long>(ErrorMessagesConstants.NotFound(request.id, typeof(ToDoTask)));
         }
 
         _repositoryWrapper.ToDoTasksRepository.Delete(entityToDelete);
@@ -35,7 +36,7 @@ public class DeleteToDoTaskHandler : IRequestHandler<DeleteToDoTaskCommand, Resu
             return Result.Ok(entityToDelete.Id);
         }
 
-        return Result.Fail<long>("Failed to delete a task.");
+        return Result.Fail<long>(ToDoTaskConstants.FailedToDeleteToDoTask);
     }
 }
 

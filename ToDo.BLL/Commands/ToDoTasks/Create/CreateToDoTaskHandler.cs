@@ -2,6 +2,7 @@
 using FluentResults;
 using FluentValidation;
 using MediatR;
+using ToDo.BLL.Constants;
 using ToDo.BLL.DTOs.ToDoTasks;
 using ToDo.DAL.Entities;
 using ToDo.DAL.Repositories.Interfaces.Base;
@@ -40,7 +41,7 @@ public class CreateToDoTaskHandler : IRequestHandler<CreateToDoTaskCommand, Resu
                 return Result.Ok(resultDto);
             }
 
-            return Result.Fail<ToDoTaskDto>("Failed to create a task.");
+            return Result.Fail<ToDoTaskDto>(ToDoTaskConstants.FailedToCreateToDoTask);
         }
         catch (ValidationException ex)
         {

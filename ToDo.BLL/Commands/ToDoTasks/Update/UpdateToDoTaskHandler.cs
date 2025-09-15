@@ -2,6 +2,7 @@
 using FluentResults;
 using FluentValidation;
 using MediatR;
+using ToDo.BLL.Constants;
 using ToDo.BLL.DTOs.ToDoTasks;
 using ToDo.DAL.Entities;
 using ToDo.DAL.Repositories.Interfaces.Base;
@@ -48,7 +49,7 @@ public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTaskCommand, Resu
                 return Result.Ok(resultDto);
             }
 
-            return Result.Fail<ToDoTaskDto>("Failed to update task.");
+            return Result.Fail<ToDoTaskDto>(ToDoTaskConstants.FailedToUpdateToDoTask);
         }
         catch (ValidationException ex)
         {
