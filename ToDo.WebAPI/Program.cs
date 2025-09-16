@@ -28,7 +28,17 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
         opt.MigrationsHistoryTable("__EFMigrationsHistory", schema: "entity_framework");
     });
 });
- 
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "https://localhost:3000") // your Vite dev server
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -36,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+app.UseCors();
 
 app.MapControllers();
 

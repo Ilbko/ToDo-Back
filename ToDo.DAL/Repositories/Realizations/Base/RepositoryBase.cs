@@ -59,6 +59,7 @@ internal class RepositoryBase<T> : IRepositoryBase<T>
 
     public EntityEntry<T> Update(T entity)
     {
+        _dbContext.ChangeTracker.Clear();
         return _dbContext.Set<T>().Update(entity);
     }
 

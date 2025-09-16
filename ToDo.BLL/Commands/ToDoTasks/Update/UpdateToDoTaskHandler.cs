@@ -35,7 +35,7 @@ public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTaskCommand, Resu
             var categoryEntity =
                 await _repositoryWrapper.ToDoTasksRepository.GetFirstOrDefaultAsync(new QueryOptions<ToDoTask>
                 {
-                    Filter = entity => entity.Id == request.id
+                    Filter = entity => entity.Id == request.id,
                 });
 
             var entityToUpdate = _mapper.Map<UpdateToDoTaskDto, ToDoTask>(request.updateToDoTaskDto);
