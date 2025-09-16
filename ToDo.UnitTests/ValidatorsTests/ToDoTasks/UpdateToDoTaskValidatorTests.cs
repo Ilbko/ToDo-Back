@@ -109,7 +109,7 @@ public class UpdateToDoTaskValidatorTests
     [Fact]
     public void Validate_ShouldNotHaveError_WhenStatusIsValid()
     {
-        var command = new UpdateToDoTaskCommand(new UpdateToDoTaskDto { Status = Status.InProgress }, 1); // Assuming "Pending" is a valid enum value
+        var command = new UpdateToDoTaskCommand(new UpdateToDoTaskDto { Status = Status.InProgress }, 1);
 
         var result = _validator.TestValidate(command);
 
